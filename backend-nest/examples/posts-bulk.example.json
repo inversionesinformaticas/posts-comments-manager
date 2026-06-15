@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Introducción a Angular Signals",
+    "body": "Los signals permiten manejar estado reactivo sin depender de observables para cada cambio simple.",
+    "author": "Ana Rodríguez"
+  },
+  {
+    "title": "Buenas prácticas con NestJS",
+    "body": "Separar controllers, services y DTOs facilita mantener endpoints claros y testeables en proyectos medianos.",
+    "author": "Carlos Méndez"
+  },
+  {
+    "title": "Cómo organizar componentes reutilizables",
+    "body": "Conviene ubicar en shared solo lo que realmente se reutiliza en más de una pantalla, como alertas, spinners y diálogos de confirmación.",
+    "author": "Laura Castillo"
+  },
+  {
+    "title": "Manejo de errores en APIs REST",
+    "body": "Un filtro global de excepciones ayuda a responder siempre con el mismo formato cuando ocurre un error de validación, un recurso inexistente o un fallo interno.",
+    "author": "Francisco Reyes"
+  },
+  {
+    "title": "Validaciones con DTOs",
+    "body": "class-validator permite declarar reglas en el backend y rechazar payloads inválidos antes de persistir datos en MongoDB.",
+    "author": "Antonio Pérez"
+  },
+  {
+    "title": "Paginación en aplicaciones web",
+    "body": "La paginación server-side evita transferir listas completas al cliente. Parámetros como page, limit y search permiten navegar y filtrar resultados de forma eficiente.",
+    "author": "Mario López"
+  },
+  {
+    "title": "Diseño de interfaces limpias",
+    "body": "Una UI clara prioriza jerarquía visual, espaciado consistente y mensajes de estado comprensibles para el usuario.",
+    "author": "Laura Castillo"
+  },
+  {
+    "title": "Consumo de APIs con RxJS",
+    "body": "Los servicios HTTP suelen combinar switchMap, tap, catchError y retry para encadenar peticiones, validar respuestas y recuperarse de fallos temporales de red.",
+    "author": "Isaias Martinez"
+  },
+  {
+    "title": "Primeros pasos con MongoDB",
+    "body": "Docker Compose simplifica levantar una base local para desarrollo.",
+    "author": "Admin"
+  },
+  {
+    "title": "Formularios reactivos en Angular",
+    "body": "Reactive Forms ofrecen control fino sobre validaciones síncronas, mensajes de error y envío condicionado según el estado del formulario.",
+    "author": "Ana Rodríguez"
+  },
+  {
+    "title": "Estructura modular en el frontend",
+    "body": "Organizar el código en core, shared y features mejora la legibilidad del proyecto y facilita que nuevos desarrolladores encuentren rápidamente páginas, componentes y servicios relacionados con publicaciones y comentarios.",
+    "author": "Carlos Méndez"
+  },
+  {
+    "title": "Confirmaciones antes de eliminar registros",
+    "body": "Mostrar un modal de confirmación reduce eliminaciones accidentales.",
+    "author": "Francisco Reyes"
+  },
+  {
+    "title": "Contador de comentarios por publicación",
+    "body": "Exponer commentCount desde el backend permite resaltar en el listado qué publicaciones tienen actividad, sin consultar comentarios uno por uno en el cliente.",
+    "author": "Mario López"
+  },
+  {
+    "title": "Carga masiva de posts con insertMany",
+    "body": "El endpoint POST /posts/bulk acepta un arreglo de objetos con title, body y author. Es útil para poblar entornos de prueba con decenas de registros en una sola petición, validando cada elemento antes de insertarlo.",
+    "author": "Admin"
+  },
+  {
+    "title": "Búsqueda por título o autor",
+    "body": "Filtrar en el servidor mantiene coherente la paginación cuando el usuario escribe en el buscador del listado principal.",
+    "author": "Antonio Pérez"
+  },
+  {
+    "title": "Estados vacíos y de carga en la UI",
+    "body": "Informar cuando no hay publicaciones, cuando la búsqueda no devuelve resultados o mientras se espera la respuesta del servidor mejora la experiencia y evita pantallas en blanco sin contexto.",
+    "author": "Laura Castillo"
+  },
+  {
+    "title": "Interceptores HTTP en Angular y NestJS",
+    "body": "En el frontend, un interceptor puede centralizar el manejo de errores HTTP. En el backend, otro interceptor puede estandarizar respuestas que aún no usen el formato común de la API.",
+    "author": "Isaias Martinez"
+  },
+  {
+    "title": "Cards responsivas para listados",
+    "body": "Las cards deben truncar título y contenido, mantener botones accesibles en móvil y adaptar el grid de tres columnas a una sola en pantallas pequeñas.",
+    "author": "Ana Rodríguez"
+  },
+  {
+    "title": "Eliminación en cascada de comentarios",
+    "body": "Al borrar una publicación conviene eliminar también sus comentarios asociados para no dejar referencias huérfanas en la base de datos.",
+    "author": "Carlos Méndez"
+  },
+  {
+    "title": "Publicar y moderar comentarios en detalle",
+    "body": "La pantalla de detalle concentra la lectura completa de una publicación, el listado de comentarios existentes y el formulario para agregar uno nuevo. Tras crear o eliminar un comentario, la lista debe actualizarse de inmediato para reflejar el cambio sin recargar toda la aplicación. Este flujo es habitual en foros, blogs internos y paneles de soporte donde los usuarios consultan una entrada y dejan feedback estructurado con nombre, correo y texto.",
+    "author": "Francisco Reyes"
+  }
+]

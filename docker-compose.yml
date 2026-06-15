@@ -1,0 +1,32 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: pcm-mongodb
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: posts_comments_manager
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    profiles:
+      - backend
+    build:
+      context: ./backend-nest
+      dockerfile: Dockerfile
+    container_name: pcm-backend
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://admin:admin123@mongodb:27017/posts_comments_manager?authSource=admin
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:

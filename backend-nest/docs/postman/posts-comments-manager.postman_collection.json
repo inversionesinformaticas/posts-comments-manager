@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "Posts & Comments Manager",
+    "description": "API REST para gestionar posts y comentarios.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "postId",
+      "value": ""
+    },
+    {
+      "key": "commentId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "GET /posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/posts"
+          }
+        },
+        {
+          "name": "GET /posts?page=1&limit=6",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/posts?page=1&limit=6",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "6" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /posts?page=1&limit=6&search=primer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/posts?page=1&limit=6&search=primer",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "6" },
+                { "key": "search", "value": "primer" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /posts/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/posts/{{postId}}"
+          }
+        },
+        {
+          "name": "POST /posts",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Nuevo post\",\n  \"body\": \"Contenido del nuevo post de prueba.\",\n  \"author\": \"Isaias\"\n}"
+            },
+            "url": "{{baseUrl}}/posts"
+          }
+        },
+        {
+          "name": "PUT /posts/:id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Post actualizado\",\n  \"body\": \"Contenido actualizado del post.\",\n  \"author\": \"Isaias\"\n}"
+            },
+            "url": "{{baseUrl}}/posts/{{postId}}"
+          }
+        },
+        {
+          "name": "DELETE /posts/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/posts/{{postId}}"
+          }
+        },
+        {
+          "name": "POST /posts/bulk",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"title\": \"Primer post\",\n    \"body\": \"Este es el contenido del primer post de prueba.\",\n    \"author\": \"Isaias\"\n  },\n  {\n    \"title\": \"Segundo post\",\n    \"body\": \"Este es el contenido del segundo post de prueba.\",\n    \"author\": \"Admin\"\n  }\n]"
+            },
+            "url": "{{baseUrl}}/posts/bulk"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "GET /comments?postId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/comments?postId={{postId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["comments"],
+              "query": [
+                {
+                  "key": "postId",
+                  "value": "{{postId}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /comments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": \"{{postId}}\",\n  \"name\": \"Isaias\",\n  \"email\": \"isaias@example.com\",\n  \"body\": \"Comentario de prueba.\"\n}"
+            },
+            "url": "{{baseUrl}}/comments"
+          }
+        },
+        {
+          "name": "DELETE /comments/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/comments/{{commentId}}"
+          }
+        }
+      ]
+    }
+  ]
+}
