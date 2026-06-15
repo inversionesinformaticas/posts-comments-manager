@@ -171,6 +171,3 @@ Copiar a .env antes de ejecutar. No subir .env al repositorio.
 | MONGODB_URI | mongodb://admin:admin123@localhost:27017/posts_comments_manager?authSource=admin |   
    
 ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnEAAAACCAYAAAA3pIp+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANklEQVR4nO3OQQmAABRAsSfYxZo/kC1sYQLPJrCCNxG2BFtmZquOAAD4i3Ot7mr/egIAwGvXA4qzBdC53Vr8AAAAAElFTkSuQmCC)  
-**Notas**  
-- node_modules, dist, .env, .angular, coverage y .cursor deben estar ignorados por git.  
-- El repositorio debe mantenerse público para evaluación.  
