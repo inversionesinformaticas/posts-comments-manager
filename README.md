@@ -162,8 +162,7 @@ npm run test:e2e del backend requiere MongoDB activo.
 El backend usa las variables definidas en:  
 backend-nest/.env.example  
    
-Copiar a .env antes de ejecutar. No subir .env al repositorio.  
-   
+  
 | | |  
 |-|-|  
 | **Variable** | **Valor por defecto** |   
